@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteUser } from '../features/users/usersSlice'
+import { deleteUser } from '../users/usersSlice'
 
 const UserList = () => {
   const users = useSelector((state) => state.users.users) // Read from Redux
