@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../users/usersSlice'
+import { TextField, Button, Box } from '@mui/material'
 
 const AddUser = () => {
   const [name, setName] = useState('') // Track input value
@@ -18,16 +19,20 @@ const AddUser = () => {
     setName('') // Clear input after adding
   }
 
+ 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Enter name"
+    <Box display="flex" alignItems="center" justifyContent='center' gap={2} py={4}>
+      <TextField
+        label="Enter name"
+        variant="outlined"
         value={name}
-        onChange={(e) => setName(e.target.value)} // Update state when typing
+        onChange={(e) => setName(e.target.value)}
+        size="small"
       />
-      <button onClick={handleAddUser}>Add User</button>
-    </div>
+      <Button variant="contained" color="primary" onClick={handleAddUser}>
+        Add User
+      </Button>
+    </Box>
   )
 }
 
